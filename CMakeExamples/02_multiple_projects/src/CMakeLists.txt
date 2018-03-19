@@ -4,4 +4,4 @@ project(src)
 
 set(SOURCE_LIB FirstClass.cpp)
 
-add_library(src ${SOURCE_LIB})
+add_library(src SHARED ${SOURCE_LIB})
