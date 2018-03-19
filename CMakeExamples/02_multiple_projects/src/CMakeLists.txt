@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(src)
+project(FirstClass)
 
 set(SOURCE_LIB FirstClass.cpp)
 
-add_library(src SHARED ${SOURCE_LIB})
+add_library(FirstClass SHARED ${SOURCE_LIB})

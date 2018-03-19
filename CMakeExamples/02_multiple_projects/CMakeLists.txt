@@ -12,6 +12,6 @@ add_executable(FirstClassAsLibrary ${MAIN_SOURCE})
 
 add_subdirectory(src)
 
-target_link_libraries(FirstClassAsLibrary src)
+target_link_libraries(FirstClassAsLibrary FirstClass)
 
 
