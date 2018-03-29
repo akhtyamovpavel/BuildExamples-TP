@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS = foreign
+SUBDIRS = main
+ACLOCAL_AMFLAGS = -I m4
