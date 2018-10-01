@@ -1,0 +1,2 @@
+#define Configurator_VERSION_MAJOR @Configurator_VERSION_MAJOR@
+#define Configurator_VERSION_MINOR @Configurator_VERSION_MINOR@
