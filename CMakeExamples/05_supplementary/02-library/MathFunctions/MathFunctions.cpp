@@ -10,7 +10,7 @@ double MySqrt(double x) {
   if (x > 0) {
     return sqrt(x);
   } else {
-    return sqrt(abs(x));
+    return sqrt(std::abs(x));
   }
 }
 

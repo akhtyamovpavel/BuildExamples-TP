@@ -1,3 +1,6 @@
+
+
+
 cmake_minimum_required(VERSION 3.10)
 project(Math)
 
@@ -26,3 +29,6 @@ add_executable(Math main.cpp)
 target_link_libraries(Math ${EXTRA_LIBS})
 
 install(TARGETS Math DESTINATION bin)
+
+
+
