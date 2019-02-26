@@ -1,7 +1,13 @@
 #!/bin/bash
 
-g++ -o FirstClass.o -c FirstClass.cpp
+CFLAGS="-std=c++11 -Wall"
 
-g++ -o main.o -c main.cpp
+SOURCE_DIR=src
+BUILD_DIR=build
 
-g++ -o FirstClassProject main.o FirstClass.o
+mkdir -p ${BUILD_DIR}
+g++ ${CFLAGS} -o ${BUILD_DIR}/FirstClass.o -c ${SOURCE_DIR}/FirstClass.cpp
+g++ ${CFLAGS} -o ${BUILD_DIR}/main.o -c ${SOURCE_DIR}/main.cpp
+g++ ${CFLAGS} -o FirstClassProject ${BUILD_DIR}/main.o ${BUILD_DIR}/FirstClass.o
+
+

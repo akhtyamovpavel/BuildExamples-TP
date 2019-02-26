@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm *.o
+rm -r build
 rm FirstClassProject
