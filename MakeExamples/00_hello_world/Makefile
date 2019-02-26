@@ -1,8 +1,9 @@
+CFLAGS=-std=c++11 -Wall
+
 all: HelloWorldProject
 
 HelloWorldProject:
-	g++ main.cpp -o HelloWorldProject
-
+	g++ ${CFLAGS} main.cpp -o HelloWorldProject
 
 clean:
 	rm -rf *.o HelloWorldProject

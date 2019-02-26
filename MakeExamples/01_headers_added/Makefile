@@ -1,13 +1,18 @@
+CFLAGS=-std=c++11 -Wall
+
 all: HelloWorldProject
 
-HelloWorldProject: main.o FirstClass.o
-		g++ main.o FirstClass.o -o HelloWorldProject
+HelloWorldProject: build/main.o build/FirstClass.o create_dir
+		g++ ${CFLAGS} build/main.o build/FirstClass.o -o HelloWorldProject
 
-main.o:
-		g++ -c src/main.cpp -o main.o
+build/main.o: src/main.cpp create_dir
+		g++ ${CFLAGS} -c src/main.cpp -o build/main.o
 
-FirstClass.o:
-		g++ -c src/FirstClass.cpp -o FirstClass.o
+build/FirstClass.o: src/FirstClass.cpp create_dir
+		g++ ${CFLAGS} -c src/FirstClass.cpp -o build/FirstClass.o
+
+create_dir:
+		mkdir -p build
 
 clean:
-		rm -rf *.o HelloWorldProject
+		rm -rf build HelloWorldProject
