@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CFLAGS="-std=c++11 -Wall"
+CFLAGS="-std=c++11 -Wall -Werror"
 PROJECT_NAME=HelloWorldProject
 
-g++ main.cpp -o ${PROJECT_NAME}
+g++ ${CFLAGS} main.cpp -o ${PROJECT_NAME}

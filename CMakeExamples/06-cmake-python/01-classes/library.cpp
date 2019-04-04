@@ -6,11 +6,12 @@
 #include "World.h"
 
 using boost::python::class_;
+using boost::python::init;
 
 
 BOOST_PYTHON_MODULE(classes_simple)
 {
-  class_<World>("World")
+  class_<World>("World", init<std::string>())
       .def("greet", &World::greet)
       .def("set", &World::set);
 }

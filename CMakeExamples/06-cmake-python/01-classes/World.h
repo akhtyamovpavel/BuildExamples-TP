@@ -7,6 +7,7 @@
 #include <string>
 
 struct World {
+  explicit World(std::string message);
   void set(std::string message);
   std::string greet();
   std::string message;

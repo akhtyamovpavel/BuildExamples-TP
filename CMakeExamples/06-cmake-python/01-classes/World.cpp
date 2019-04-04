@@ -4,6 +4,8 @@
 
 #include "World.h"
 
+World::World(std::string message) : message(message) {}
+
 void World::set(std::string message) {
   this->message = message;
 }

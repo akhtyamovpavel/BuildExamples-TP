@@ -7,7 +7,7 @@ include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${PYTHON_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
-
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/lib")
 
 
@@ -19,4 +19,6 @@ endfunction(build_python_target)
 
 add_subdirectory(00-hello-world)
 add_subdirectory(01-classes)
+add_subdirectory(02-get-set)
+add_subdirectory(03-inheritance)
 
