@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    api project(':first_class')  // add project as dependency to current project
+}
+
+application {
+    mainClass = 'org.example.Main'
+}
