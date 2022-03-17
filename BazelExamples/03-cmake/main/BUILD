@@ -1,9 +1,9 @@
-load("@rules_foreign_cc//tools/build_defs:cmake.bzl", "cmake_external")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 
-cmake_external(
+cmake(
     name='inicpp',
     lib_source='@inicpp//:all',
-    static_libraries=['libinicpp_static.a'],
+    out_static_libs=['libinicpp_static.a'],
     out_include_dir='include/inicpp',
 )
 

@@ -6,7 +6,8 @@
 
 #include <string>
 
-struct World {
+class World {
+ public:
   explicit World(std::string message);
   void set(std::string message);
   std::string greet();
