@@ -1,0 +1,14 @@
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/FirstClassAsLibrary.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/edit_cache.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/rebuild_cache.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/list_install_components.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/install.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/install/local.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/CMakeFiles/install/strip.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/fc.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/edit_cache.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/rebuild_cache.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/list_install_components.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/install.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/install/local.dir
+/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src/CMakeFiles/install/strip.dir

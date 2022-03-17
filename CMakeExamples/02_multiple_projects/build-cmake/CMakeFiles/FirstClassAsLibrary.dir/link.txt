@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/FirstClassAsLibrary.dir/main.cpp.o -o FirstClassAsLibrary  -Wl,-rpath,/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/build-cmake/src: src/libfc.so 
