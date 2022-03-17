@@ -1,3 +1,0 @@
-/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/dist/bin/FirstClassAsLibrary
-/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/dist/lib/libfc.so
-/home/akhtyamovpavel/Teaching/TechProg/Seminar4/BuildExamples-TP/CMakeExamples/02_multiple_projects/dist/include/FirstClass.h

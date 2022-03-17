@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -shared -Wl,-soname,libfc.so -o libfc.so CMakeFiles/fc.dir/FirstClass.cpp.o  -Wl,-rpath,:::::::::::::: 
