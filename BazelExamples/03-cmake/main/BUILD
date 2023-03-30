@@ -3,7 +3,7 @@ load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 cmake(
     name='inicpp',
     lib_source='@inicpp//:all',
-    out_static_libs=['libinicpp_static.a'],
+    out_static_libs=['libinicpp.a'],
     out_include_dir='include/inicpp',
 )
 
