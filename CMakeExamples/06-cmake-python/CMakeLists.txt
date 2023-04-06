@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
 
-find_package(PythonLibs 3.8 REQUIRED)
+set(Python_FIND_VERSION_MAX 3.8)
+find_package(Python COMPONENTS Development REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system python38)
 
 include_directories(${Boost_INCLUDE_DIRS})
-include_directories(${PYTHON_INCLUDE_DIRS})
+include_directories(Python::Development)
 link_directories(${Boost_LIBRARY_DIRS})
 
 set(CMAKE_CXX_STANDARD 11)

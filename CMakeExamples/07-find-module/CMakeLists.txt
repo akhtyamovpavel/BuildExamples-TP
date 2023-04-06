@@ -7,6 +7,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${CMAKE_SOURCE_DIR}/cmake)
 
 find_package(FC REQUIRED)
 
+message(INFO ${FC_LIBRARY_DIR})
 
 add_executable(main main.cpp)
 target_include_directories(main PRIVATE ${FC_INCLUDE_DIR})

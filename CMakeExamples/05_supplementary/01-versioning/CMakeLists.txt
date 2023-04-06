@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8)
 project(Configurator)
 
 set(Configurator_VERSION_MAJOR 1)
-set(Configurator_VERSION_MINOR 0)
+set(Configurator_VERSION_MINOR 1)
 
 configure_file(${PROJECT_SOURCE_DIR}/Config.h.in ${PROJECT_SOURCE_DIR}/Config.h)
 

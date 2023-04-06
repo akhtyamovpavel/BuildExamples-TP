@@ -7,7 +7,7 @@ AC_CONFIG_MACRO_DIR(m4)
 
 AC_PROG_CXX
 
-PKG_CHECK_MODULES(OPENCV, [opencv], [], [AC_MSG_ERROR("OpenCV not found")])
+PKG_CHECK_MODULES(OPENCV, [opencv4], [], [AC_MSG_ERROR("OpenCV not found")])
 
 
 AC_OUTPUT(Makefile main/Makefile)

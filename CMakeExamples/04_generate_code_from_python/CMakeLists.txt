@@ -17,5 +17,5 @@ add_executable(GenerateArray ${SOURCES})
 add_dependencies(GenerateArray RunGenerator)
 
 target_include_directories(GenerateArray PRIVATE ${CMAKE_BINARY_DIR})
-target_link_libraries(GenerateArray PRIVATE $GTEST_LIBRARIES)
-target_include_directories(GenerateArray PRIVATE ${GTEST_INCLUDE_DIRS})
+# target_link_libraries(GenerateArray PRIVATE $GTEST_LIBRARIES)
+# target_include_directories(GenerateArray PRIVATE ${GTEST_INCLUDE_DIRS})

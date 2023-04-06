@@ -2,6 +2,8 @@
 cmake_minimum_required(VERSION 2.8)
 # Minimal of version of CMake you need to begin the build
 
+#set(CMAKE_C_COMPILER mpicc)
+#set(CMAKE_CXX_COMPILER mpic++)
 project(HelloWorldProject)
 
 message(INFO ${HelloWorldProject_SOURCE_DIR})
