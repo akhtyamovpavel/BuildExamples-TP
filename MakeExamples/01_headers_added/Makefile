@@ -1,18 +1,20 @@
 CFLAGS=-std=c++11 -Wall
 
-all: HelloWorldProject
+.PHONY: all create_dir
+all: create_dir HelloWorldProject
 
-HelloWorldProject: build/main.o build/FirstClass.o create_dir
-		g++ ${CFLAGS} build/main.o build/FirstClass.o -o HelloWorldProject
 
-build/main.o: src/main.cpp create_dir
-		g++ ${CFLAGS} -c src/main.cpp -o build/main.o
+HelloWorldProject: build/main.o build/FirstClass.o
+		g++ ${CFLAGS} $? -o $@
 
-build/FirstClass.o: src/FirstClass.cpp create_dir
-		g++ ${CFLAGS} -c src/FirstClass.cpp -o build/FirstClass.o
+build/main.o: src/main.cpp
+		g++ ${CFLAGS} -c $? -o $@
+
+build/FirstClass.o: src/FirstClass.cpp
+		g++ ${CFLAGS} -c $? -o $@
 
 create_dir:
-		mkdir -p build
+	mkdir -p build
 
 clean:
 		rm -rf build HelloWorldProject

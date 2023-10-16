@@ -16,7 +16,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
  Makefile
   src/Makefile
-  ])
+])
 
 # Generate the output
 AC_OUTPUT

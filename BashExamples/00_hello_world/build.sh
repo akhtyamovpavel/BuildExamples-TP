@@ -2,5 +2,6 @@
 
 CFLAGS="-std=c++11 -Wall -Werror"
 PROJECT_NAME=HelloWorldProject
+CXX=${CXX:-g++}
 
-g++ ${CFLAGS} main.cpp -o ${PROJECT_NAME}
+${CXX} ${CFLAGS} main.cpp -o ${PROJECT_NAME}
