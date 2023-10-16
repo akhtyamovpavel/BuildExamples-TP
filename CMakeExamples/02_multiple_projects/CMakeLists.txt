@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 
 project(FirstClassAsLibrary)
 
-set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+if (NOT APPLE)
+    set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+else()
+    set(CMAKE_INSTALL_RPATH "@loader_path/../lib")
+endif()
 
 
 set(MAIN_SOURCE main.cpp)

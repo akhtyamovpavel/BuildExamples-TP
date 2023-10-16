@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 # Minimal of version of CMake you need to begin the build
 
 #set(CMAKE_C_COMPILER mpicc)
