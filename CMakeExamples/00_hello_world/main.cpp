@@ -1,5 +1,5 @@
 #include <iostream>
-#include <mpi.h>
+// #include <mpi.h>
 
 
 int main() {
