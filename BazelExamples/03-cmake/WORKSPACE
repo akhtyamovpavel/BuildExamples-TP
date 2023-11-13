@@ -33,7 +33,7 @@ rules_foreign_cc_dependencies()
 new_git_repository(
     name='inicpp',
     remote='https://github.com/SemaiCZE/inicpp',
-    branch='master',
+    tag='v1.2.2',
     build_file_content=all_content,
     init_submodules=True,
 )
