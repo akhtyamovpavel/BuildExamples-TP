@@ -1,4 +1,5 @@
-cmake_policy(SET CMP0074 NEW)
+# cmake_policy(SET CMP0074 NEW)
+
 find_path(
     FC_INCLUDE_DIR NAMES FirstClass.h
     HINTS
@@ -25,7 +26,7 @@ find_package_handle_standard_args(FC
     REQUIRED_VARS
         FC_LIBRARIES
         FC_INCLUDE_DIR
-        VERSION_VAR FC_VERSION
+    VERSION_VAR FC_VERSION
 )
 
 

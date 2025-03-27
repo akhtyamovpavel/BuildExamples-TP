@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(Python_FIND_VERSION_MAX 3.8)
+set(Python_FIND_VERSION_MAX 3.12)
 find_package(Python COMPONENTS Development REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system python38)
+find_package(Boost REQUIRED COMPONENTS system python312)
 
 include_directories(${Boost_INCLUDE_DIRS})
 include_directories(Python::Development)

@@ -8,7 +8,6 @@ option(USE_MYMATH "Use Module Math" ON)
 
 set(CMAKE_CXX_STANDARD 11)
 
-
 set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/dist)
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
@@ -18,7 +17,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
 
 
 if (USE_MYMATH)
-    add_definitions(-DUSE_MYMATH)
+    add_compile_definitions(USE_MYMATH)
     include_directories("${PROJECT_SOURCE_DIR}/MathFunctions")
     add_subdirectory(MathFunctions)
     set(EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)

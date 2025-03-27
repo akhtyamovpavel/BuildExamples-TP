@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 3.10)
 # Minimal of version of CMake you need to begin the build
 
@@ -7,6 +6,7 @@ cmake_minimum_required(VERSION 3.10)
 project(HelloWorldProject)
 
 message(INFO ${HelloWorldProject_SOURCE_DIR})
+
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${HelloWorldProject_SOURCE_DIR}/bin)
 # Name of the project
 

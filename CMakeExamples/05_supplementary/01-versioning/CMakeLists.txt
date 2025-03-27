@@ -1,11 +1,14 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 
 project(Configurator)
 
 set(Configurator_VERSION_MAJOR 1)
 set(Configurator_VERSION_MINOR 1)
 
-configure_file(${PROJECT_SOURCE_DIR}/Config.h.in ${PROJECT_SOURCE_DIR}/Config.h)
+configure_file(
+    ${PROJECT_SOURCE_DIR}/Config.h.in
+    ${PROJECT_SOURCE_DIR}/Config.h
+)
 
 
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)

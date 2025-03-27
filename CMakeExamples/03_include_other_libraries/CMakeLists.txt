@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 
 project(ListDirectory)
 
@@ -9,14 +9,14 @@ set(CMAKE_CXX_STANDARD 11)
 
 find_package(Boost COMPONENTS filesystem system REQUIRED)
 
-include_directories(include)
-include_directories(${Boost_INCLUDE_DIRS})
 add_executable(ListDirectory main.cpp)
+target_include_directories(ListDirectory PRIVATE include)
+# target_include_directories(ListDirectory PRIVATE ${Boost_INCLUDE_DIRS})
 
 add_subdirectory(src)
 
-link_directories(${Boost_LIBRARY_DIRS})
-target_link_libraries(ListDirectory  ListDir)
+# target_link_directories(ListDirectory PRIVATE ${Boost_LIBRARY_DIRS})
+target_link_libraries(ListDirectory PRIVATE ListDir)
 
 install(
     TARGETS ListDirectory
