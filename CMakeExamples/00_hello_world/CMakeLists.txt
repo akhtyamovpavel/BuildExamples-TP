@@ -1,15 +1,28 @@
-cmake_minimum_required(VERSION 3.10)
-# Minimal of version of CMake you need to begin the build
+# ============================================================================
+# Пример 00: Hello World - минимальный проект CMake
+# ============================================================================
+# Демонстрирует базовые команды для создания простого исполняемого файла
 
+# Указываем минимальную версию CMake, необходимую для сборки проекта
+# Это гарантирует, что все используемые функции поддерживаются
+cmake_minimum_required(VERSION 3.10)
+
+# Опционально: можно задать конкретные компиляторы
+# Раскомментируйте для использования MPI компиляторов
 #set(CMAKE_C_COMPILER mpicc)
 #set(CMAKE_CXX_COMPILER mpic++)
+
+# Объявляем проект. Это создает переменные вида <ProjectName>_SOURCE_DIR
 project(HelloWorldProject)
 
+# Выводим информационное сообщение с путем к исходникам
 message(INFO ${HelloWorldProject_SOURCE_DIR})
 
+# Устанавливаем директорию для выходных исполняемых файлов
+# По умолчанию они создаются в директории сборки
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${HelloWorldProject_SOURCE_DIR}/bin)
-# Name of the project
 
-add_executable(HelloWorldProjectMain main.cpp) 
-# Create executable with sources
+# Создаем исполняемый файл из исходников
+# Формат: add_executable(<имя_цели> <список_исходников>)
+add_executable(HelloWorldProjectMain main.cpp)
 
