@@ -24,10 +24,10 @@ public class TestWebBrowser {
 
     @Test
     public void testWebHse() throws InterruptedException {
-        driver.get("https://www.hse.ru/en/");
+        driver.get("https://centraluniversity.ru/");
 
         Thread.sleep(10000);
-        assertEquals("HSE University", driver.getTitle());
+        assertEquals("Центральный университет", driver.getTitle());
     }
 
     @Test
@@ -35,7 +35,7 @@ public class TestWebBrowser {
         driver.get("https://ya.ru/");
 
         Thread.sleep(10000);
-        assertEquals("Яндекс", driver.getTitle());
+        assertEquals("Яндекс — быстрый поиск в интернете", driver.getTitle());
     }
 
 
