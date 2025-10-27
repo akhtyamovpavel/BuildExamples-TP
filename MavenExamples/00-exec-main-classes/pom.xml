@@ -24,6 +24,9 @@
                         <id>ClassA</id>
                         <configuration>
                             <mainClass>MainClassA</mainClass>
+                            <arguments>
+                                <argument>Hi</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                     <execution>
