@@ -2,6 +2,7 @@ cc_library(
     name="first_class",
     srcs = ["src/FirstClass.cpp"],
     hdrs = ["src/FirstClass.h"],
+    linkstatic = False,
 )
 
 
@@ -11,7 +12,7 @@ cc_binary(
     deps = [
         ":first_class"
     ],
-    linkstatic = False,
+    linkstatic = True,
 )
 
 cc_binary(
@@ -20,5 +21,4 @@ cc_binary(
     deps = [
         ":first_class"
     ],
-    linkstatic = False,
 )

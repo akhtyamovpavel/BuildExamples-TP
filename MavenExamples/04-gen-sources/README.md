@@ -1,5 +1,7 @@
 ## Code generation
 
+Данный проект демонстрирует процесс генерации ресурсов во время сборки. Поддерживаются два системы сборки: Maven и Gradle.
+
 # Maven Build Process Diagram
 
 ```mermaid
@@ -55,3 +57,48 @@ graph TB
 3. **Результат**: 
    - Приложение `Main.java` загружает `graph.png` из ресурсов и отображает его в Swing-окне
 
+# Gradle Build Process
+
+Gradle эквивалент использует те же этапы сборки, но с использованием Gradle плагинов:
+
+## Сборка проекта (Gradle)
+
+```bash
+./gradlew build
+```
+
+или
+
+```bash
+./gradlew shadowJar
+```
+
+## Описание процесса сборки (Gradle)
+
+1. **Генерация ресурсов**:
+   - Задача `generateGraph` запускает команду `dot -Tpng input.dot -o graph.png`
+   - Задача `copyGraphToResources` копирует `graph.png` в `build/generated/resources`
+   - Процесс ресурсов (`processResources`) включает сгенерированный файл в classpath
+
+2. **Упаковка**:
+   - Плагин `shadow` создает uber JAR со всеми зависимостями
+   - Манифест содержит указание главного класса `ru.akhcheck.Main`
+
+3. **Результат**:
+   - Приложение `Main.java` загружает `graph.png` из ресурсов и отображает его в Swing-окне
+
+## Структура задач Gradle
+
+- `generateGraph` - генерирует graph.png из input.dot
+- `copyGraphToResources` - копирует graph.png в директорию ресурсов
+- `processResources` - обрабатывает ресурсы (зависит от copyGraphToResources)
+- `shadowJar` - создает uber JAR с зависимостями и main-классом
+
+## Требования
+
+Для генерации графа необходимо установить Graphviz:
+```bash
+sudo apt-get install graphviz  # Debian/Ubuntu
+brew install graphviz         # macOS
+choco install graphviz        # Windows (Chocolatey)
+```
