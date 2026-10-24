@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'application' // add for main class for run
+}
+
+group 'org.example'  // Packaging Group for repositories
+version '1.0-SNAPSHOT'
+
+repositories {  // Set repositories to download from
+    jcenter()
+}
+
+application {   // Like add executable in CMake
+    mainClass = 'HelloWorld' // Set main class of application
+}
+
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    archivesBaseName = '01-simple-project'
+    archiveVersion = '0.1.0'
+
+    manifest {  // In order to run jar file - you need to set manifest
+        attributes 'Main-Class': 'org.example.HelloWorld'
+    }
+}

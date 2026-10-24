@@ -1,0 +1,19 @@
+load("//macro:macro.bzl", "my_macro")
+
+exports_files(["lib_impl.cc", "lib_impl.h", "my_test.cc"])
+
+my_macro(
+    name = "stamped",
+    deps = ["//codegen:stamp_lib"],
+    create_test = True,
+)
+
+cc_binary(
+    name = "hello-world",
+    srcs = ["main.cpp"],
+    deps = [
+        ":stamped_cc_lib",
+        "//codegen:stamp_lib",
+    ],
+    data = ["//codegen:file"],
+)

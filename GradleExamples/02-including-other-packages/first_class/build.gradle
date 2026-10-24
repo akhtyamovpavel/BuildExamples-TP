@@ -1,4 +1,18 @@
 plugins {
-    id 'java'
     id 'java-library'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    // api попадает в compileClasspath и runtimeClasspath модуля-потребителя (app)
+    // implementation скрыта внутри first_class и не вызывает перекомпиляцию app при смене версии
+    api 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.slf4j:slf4j-api:1.7.36'
 }

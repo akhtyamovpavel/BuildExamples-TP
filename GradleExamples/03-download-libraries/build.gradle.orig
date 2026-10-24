@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass = 'org.example.Main'
+}
+
+dependencies {
+    compile 'org.apache.logging.log4j:log4j-core:2.14.0'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core/2.14.0
+    // copy groupId:artifactId:version
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}

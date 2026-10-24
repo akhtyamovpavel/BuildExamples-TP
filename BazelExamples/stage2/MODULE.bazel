@@ -1,0 +1,1 @@
+module(name = "bazel_stage2", version = "1.0.0")

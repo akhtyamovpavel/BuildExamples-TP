@@ -1,0 +1,1 @@
+exports_files(["macro.bzl", "foo.bzl"])

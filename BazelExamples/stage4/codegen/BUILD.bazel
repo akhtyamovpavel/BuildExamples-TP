@@ -1,0 +1,29 @@
+cc_binary(
+    name = "generator",
+    srcs = ["generator.cc"],
+    visibility = ["//visibility:public"],
+)
+
+# Из слайда 10 донора Block 03.3 Bazel Build System.pptx:
+genrule(
+    name = "file",
+    outs = ["file.txt"],
+    cmd = "$(location //codegen:generator) some_arg > $@",
+    tools = ["//codegen:generator"],
+    visibility = ["//visibility:public"],
+)
+
+genrule(
+    name = "generated_header",
+    outs = ["generated_stamp.h"],
+    cmd = "$(location //codegen:generator) MIPT_1C_2026 > $@",
+    tools = ["//codegen:generator"],
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "stamp_lib",
+    hdrs = [":generated_header"],
+    includes = ["."],
+    visibility = ["//visibility:public"],
+)

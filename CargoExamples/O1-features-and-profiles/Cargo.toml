@@ -1,0 +1,11 @@
+[package]
+name = "o1-features-and-profiles"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["fast-hash"]
+fast-hash = []
+extended-metrics = []
+
+[dependencies]

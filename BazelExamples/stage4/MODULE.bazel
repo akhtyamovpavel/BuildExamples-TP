@@ -1,0 +1,1 @@
+module(name = "bazel_stage4_codegen_and_macros", version = "1.0.0")

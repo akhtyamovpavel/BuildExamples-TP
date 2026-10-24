@@ -1,17 +1,90 @@
+import org.gradle.api.DefaultTask
+import org.gradle.api.file.RegularFileProperty
+import org.gradle.api.tasks.*
+
 plugins {
     id 'java'
-    id 'java-library'
     id 'application'
 }
 
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
 repositories {
-    jcenter()
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
-    api project(':first_class')  // add project as dependency to current project
+    implementation project(':first_class')
 }
 
 application {
     mainClass = 'org.example.Main'
+}
+
+// 1. Пользовательские задачи и граф зависимостей (DAG) со слайда 8 донора:
+tasks.register('hello') {
+    group = 'demo'
+    description = 'Базовая вершина графа задач'
+    doLast {
+        println 'Hello world!'
+    }
+}
+
+tasks.register('intro') {
+    group = 'demo'
+    description = 'Зависимая задача в DAG (dependsOn hello)'
+    dependsOn tasks.named('hello')
+    doLast {
+        println "I'm Gradle"
+    }
+}
+
+// 2. Кэшируемая инкрементальная задача с @InputFile и @OutputFile:
+@CacheableTask
+abstract class GenerateBannerTask extends DefaultTask {
+    @InputFile
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract RegularFileProperty getInputBanner()
+
+    @OutputFile
+    abstract RegularFileProperty getOutputReport()
+
+    @TaskAction
+    void generate() {
+        File inp = inputBanner.get().asFile
+        File out = outputReport.get().asFile
+        out.parentFile.mkdirs()
+        String text = inp.getText('UTF-8').trim()
+        out.setText("BANNER_SHA_LEN=" + text.length() + "\nCONTENT=" + text + "\n", 'UTF-8')
+    }
+}
+
+tasks.register('generateBannerReport', GenerateBannerTask) {
+    group = 'build'
+    description = 'Инкрементальная генерация отчета (EXECUTED / UP-TO-DATE / FROM-CACHE)'
+    inputBanner = layout.projectDirectory.file('src/main/resources/banner.txt')
+    outputReport = layout.buildDirectory.file('generated/banner-report.txt')
+}
+
+tasks.named('processResources') {
+    dependsOn tasks.named('generateBannerReport')
+}
+
+// 3. Сборка автономного Fat (Uber) JAR со всеми классами подпроекта first_class:
+tasks.register('fatJar', Jar) {
+    group = 'build'
+    description = 'Собирает автономный Fat JAR со всеми классами модулей'
+    archiveBaseName = 'app-all'
+    archiveVersion = '1.0-SNAPSHOT'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest {
+        attributes 'Main-Class': 'org.example.Main'
+    }
+    from sourceSets.main.output
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+    }
 }

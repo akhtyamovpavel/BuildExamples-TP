@@ -3,21 +3,22 @@ plugins {
     id 'application' // add for main class for run
 }
 
-group 'org.example'  // Packaging Group for repositories
-version '1.0-SNAPSHOT'
+group = 'org.example'  // Packaging Group for repositories
+version = '1.0-SNAPSHOT'
 
-repositories {  // Set repositories to download from
-    jcenter()
+repositories {  // Set repositories to download from (fixed from removed jcenter())
+    mavenLocal()
+    mavenCentral()
 }
 
 application {   // Like add executable in CMake
-    mainClass = 'HelloWorld' // Set main class of application
+    mainClass = 'org.example.HelloWorld' // Fixed package prefix (was HelloWorld)
 }
 
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.8.2'
 }
 
 test {
@@ -25,7 +26,7 @@ test {
 }
 
 jar {
-    archivesBaseName = '01-simple-project'
+    archiveBaseName = '01-simple-project'
     archiveVersion = '0.1.0'
 
     manifest {  // In order to run jar file - you need to set manifest

@@ -1,3 +1,2 @@
-rootProject.name = '02-including-other-packages'
-include('app', 'first_class')  // include multiple directories of your project
-
+rootProject.name = '02-multimodule-and-tasks'
+include('first_class', 'app')

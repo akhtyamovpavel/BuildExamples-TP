@@ -13,7 +13,7 @@ genrule(
     srcs=['//examples:configs'],
     outs=['examples/config.ini'],
     output_to_bindir=1,
-    cmd='mkdir -p examples && cp $(locations //examples:configs) $@'
+    cmd='mkdir -p $(@D) && cp $(locations //examples:configs) $@'
 )
 
 cc_binary(
@@ -24,7 +24,6 @@ cc_binary(
     ],
     data=[
         ':copy_configs',
+        '//examples:configs',
     ]
-
 )
-
